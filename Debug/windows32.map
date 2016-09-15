@@ -1,6 +1,6 @@
  windows32
 
- Timestamp is 57da71e2 (Thu Sep 15 03:03:14 2016)
+ Timestamp is 57daf70e (Thu Sep 15 12:31:26 2016)
 
  Preferred load address is 00400000
 
@@ -50,7 +50,7 @@
  0002:0000084d       dtoaproc                   0041184d f   io.obj
  0002:000008c8       atowproc                   004118c8 f   io.obj
  0002:00000924       atodproc                   00411924 f   io.obj
- 0002:000009f0       _MainProc                  004119f0 f   main.obj
+ 0002:00000980       _MainProc                  00411980 f   main.obj
  0002:00000ab4       _DialogBoxParamA@20        00411ab4 f   user32:USER32.dll
  0002:00000aba       _EndDialog@8               00411aba f   user32:USER32.dll
  0002:00000ac0       _GetDlgItem@8              00411ac0 f   user32:USER32.dll
