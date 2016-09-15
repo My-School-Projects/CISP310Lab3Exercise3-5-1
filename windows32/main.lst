@@ -1,0 +1,126 @@
+Microsoft (R) Macro Assembler Version 11.00.50727.1	    09/15/16 03:03:13
+main.asm						     Page 1 - 1
+
+
+				; General comments
+				; Author:  
+				; Date: 
+				; This is the Visual Studio 2012/Visual C++ Express Edition 2012 version   
+
+				; Preprocessor directives
+				.586		; use the 80586 set of instructions
+				.MODEL FLAT	; use the flat memory model (only 32 bit addresses, no segment:offset)
+
+				; External source files
+				INCLUDE io.h   ; header file for input/output
+			      C ; IO.H -- header file for I/O macros (listing suppressed)
+			      C .NOLIST      ; turn off listing
+			      C .LIST        ; begin listing
+			      C 
+
+				; Stack configuration
+				.STACK 4096	   ; allocate 4096 bytes for the stack
+
+				; Named memory allocation and initialization
+ 00000000			.DATA
+ 00000000 00000000		number   DWORD ?
+ 00000004 45 6E 74 65 72	prompt1   BYTE  "Enter first number", 0
+	   20 66 69 72 73
+	   74 20 6E 75 6D
+	   62 65 72 00
+ 00000017 45 6E 74 65 72	prompt2   BYTE  "Enter second number", 0
+	   20 73 65 63 6F
+	   6E 64 20 6E 75
+	   6D 62 65 72 00
+ 0000002B  00000028 [		string    BYTE  40 DUP (?)
+	    00
+	   ]
+ 00000053 54 68 65 20 73	resultLbl BYTE  "The sum is", 0
+	   75 6D 20 69 73
+	   00
+ 0000005E  0000000B [		sum       BYTE  11 DUP (?), 0
+	    00
+	   ] 00
+
+				; procedure definitions
+ 00000000			.CODE
+ 00000000			_MainProc PROC
+					input  prompt1,   string, 40	; display promt1 and read input into string
+					atod   string					; convert string to integer
+ 0000002D  A3 00000000 R		mov    number,    eax			; store resulting integer at number
+
+					input  prompt2,   string, 40	; display prompt2 and read input into string
+					atod   string					; convert string to integer
+
+ 0000005F  03 05 00000000 R		add    eax,       number		; add first input to second input
+					dtoa   sum,       eax			; convert result to ASCII and store it at sum
+					output resultLbl, sum			; output sum
+
+ 00000096  B8 00000000		    mov     eax, 0					; exit with return code 0
+ 0000009B  C3			    ret
+ 0000009C			_MainProc ENDP
+
+				END   ; end of source code
+Microsoft (R) Macro Assembler Version 11.00.50727.1	    09/15/16 03:03:13
+main.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+atod . . . . . . . . . . . . . .	Proc
+atow . . . . . . . . . . . . . .	Proc
+dtoa . . . . . . . . . . . . . .	Proc
+input  . . . . . . . . . . . . .	Proc
+output . . . . . . . . . . . . .	Proc
+wtoa . . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 0000006A Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000009C Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+_MainProc  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000009C Public
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_getInput  . . . . . . . . . . .	L Near	 00000000 FLAT	External
+_showOutput  . . . . . . . . . .	L Near	 00000000 FLAT	External
+atodproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+atowproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+dtoaproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+number . . . . . . . . . . . . .	DWord	 00000000 _DATA	
+prompt1  . . . . . . . . . . . .	Byte	 00000004 _DATA	
+prompt2  . . . . . . . . . . . .	Byte	 00000017 _DATA	
+resultLbl  . . . . . . . . . . .	Byte	 00000053 _DATA	
+string . . . . . . . . . . . . .	Byte	 0000002B _DATA	
+sum  . . . . . . . . . . . . . .	Byte	 0000005E _DATA	
+wtoaproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+
+	   0 Warnings
+	   0 Errors
