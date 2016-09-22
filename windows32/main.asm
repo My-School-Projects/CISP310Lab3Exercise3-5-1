@@ -1,7 +1,6 @@
-; General comments
-; Author:  
-; Date: 
-; This is the Visual Studio 2012/Visual C++ Express Edition 2012 version   
+; Michael Dorst
+; CISP 310
+; Lab 3
 
 ; Preprocessor directives
 .586		; use the 80586 set of instructions
@@ -15,14 +14,22 @@ INCLUDE io.h   ; header file for input/output
 
 ; Named memory allocation and initialization
 .DATA
-number1   DWORD ?
-number2   DWORD ?
-prompt1   BYTE  "Enter first number", 0
-prompt2   BYTE  "Enter second number", 0
-prompt3   BYTE  "Enter third number", 0
-string    BYTE  40 DUP (?)
-resultLbl BYTE  "The sum is", 0
-sum       BYTE  11 DUP (?), 0
+number1   DWORD 0							; will store the first input in signed integer form
+number2   DWORD 0							; will store the second input in signed integer form
+prompt1   BYTE  "Enter first number", 0		; will be displayed in the pop-up window the first time the user is prompted for input
+prompt2   BYTE  "Enter second number", 0	; will be displayed in the pop-up window the second time the user is prompted for input
+prompt3   BYTE  "Enter third number", 0		; will be displayed in the pop-up window the third time the user is prompted for input
+string    BYTE  40 DUP (0)					; will temporarily store the ASCII values of the user's input
+											; before they are converted to integer values
+											; the input macro will put 40 ASCII coded bytes into memory,
+											; so we need 40 bytes of memory space to hold the input.
+resultLbl BYTE  "The sum is", 0				; will be displayed in the pop-up window upon outputting the sum
+sum       BYTE  11 DUP (0), 0				; will hold the ASCII value of the final sum before it is
+											; displayed to the user
+											; the longest possible value (in terms of decimal coded digits including sign)
+											; is -2147483648, which is 11 characters long as a string.
+											; because of this, the output macro expects exactly 11 bytes of ASCII coded text, so
+											; sum must be 11 bytes long.
 
 ; procedure definitions
 .CODE

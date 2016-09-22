@@ -1,17 +1,17 @@
-﻿Build started 9/15/2016 12:31:25 PM.
-     1>Project "D:\Documents\Code\VisualStudio\MichaelDorstLab3Exercise3-5-1\windows32\windows32.vcxproj" on node 2 (Build target(s)).
+﻿Build started 9/15/2016 6:24:49 PM.
+     1>Project "C:\Users\W1388195\Desktop\CISP310Lab3Exercise3-5-1\windows32\windows32.vcxproj" on node 2 (Build target(s)).
      1>_MASM:
          Assembling main.asm...
-         cmd.exe /C "C:\Users\Michael\AppData\Local\Temp\tmp2483e86440594cbaaae44321e06cd9db.cmd"
+         cmd.exe /C "C:\Users\W1388195\AppData\Local\Temp\tmpdedfa10a32444d73830b9b72ef73e768.cmd"
          ml.exe /c /nologo /Zi /Fo"Debug\main.obj" /W3 /errorReport:prompt /Fl /Tamain.asm
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Code\VisualStudio\MichaelDorstLab3Exercise3-5-1\Debug\windows32.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST:NO /DEBUG /PDB:"D:\Documents\Code\VisualStudio\MichaelDorstLab3Exercise3-5-1\Debug\windows32.pdb" /MAP /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"D:\Documents\Code\VisualStudio\MichaelDorstLab3Exercise3-5-1\Debug\windows32.lib" /MACHINE:X86 /SAFESEH:NO Debug\framework.res
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\W1388195\Desktop\CISP310Lab3Exercise3-5-1\Debug\windows32.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST:NO /DEBUG /PDB:"C:\Users\W1388195\Desktop\CISP310Lab3Exercise3-5-1\Debug\windows32.pdb" /MAP /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"C:\Users\W1388195\Desktop\CISP310Lab3Exercise3-5-1\Debug\windows32.lib" /MACHINE:X86 /SAFESEH:NO Debug\framework.res
          Debug\framework.obj
          Debug\io.obj
          Debug\main.obj
-         windows32.vcxproj -> D:\Documents\Code\VisualStudio\MichaelDorstLab3Exercise3-5-1\Debug\windows32.exe
-     1>Done Building Project "D:\Documents\Code\VisualStudio\MichaelDorstLab3Exercise3-5-1\windows32\windows32.vcxproj" (Build target(s)).
+         windows32.vcxproj -> C:\Users\W1388195\Desktop\CISP310Lab3Exercise3-5-1\Debug\windows32.exe
+     1>Done Building Project "C:\Users\W1388195\Desktop\CISP310Lab3Exercise3-5-1\windows32\windows32.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.65
+Time Elapsed 00:00:00.99
